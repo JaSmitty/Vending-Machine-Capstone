@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Threading;
 
 namespace Capstone
 {
@@ -13,7 +14,9 @@ namespace Capstone
             string directory = @"..\..\..\..";
             string fileName = "vendingmachine.csv";
             string fullPath = Path.Combine(directory, fileName);
+
             Dictionary<string, FoodItems> vendingItems = new Dictionary<string, FoodItems>();
+
             using (StreamReader rdr = new StreamReader(fullPath))
             {
                 while (!rdr.EndOfStream)
@@ -24,14 +27,21 @@ namespace Capstone
                     vendingItems.Add(itemsInfo[0], item);
                 }
             }
-            foreach (KeyValuePair<string, FoodItems> item in vendingItems)
-            {
-                Console.Write($"{item.Key}  ");
-                Console.Write($"{item.Value.ProductName}  ");
-                Console.Write($"{item.Value.Price}  ");
-                Console.Write(item.Value.Type);
-                Console.WriteLine();
-            }
+            //while (true)
+            //{
+            //    Console.Clear();
+                
+            //}
         }
+        public void DisplayItems(Dictionary<string, FoodItems> vendingItems)
+        {
+                foreach (KeyValuePair<string, FoodItems> Item in vendingItems)
+                {
+                    Console.WriteLine($"{Item.Key} - {Item.Value} {Item.Value.Price} {Item.Value.Inventory} {Item.Value.Type}");
+                    
+                }
+            }
+       
+
     }
 }

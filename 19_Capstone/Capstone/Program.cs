@@ -1,21 +1,24 @@
 ﻿using Capstone.Models;
+using CLI;
 using System;
+using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 
 namespace Capstone
 {
     class Program
     {
+        private static Dictionary<string, FoodItems> vendingItems;
+
         static void Main(string[] args)
         {
-            VendingMachine vending = new VendingMachine();
-            vending.Run();
+            MainMenu menu = new MainMenu();
 
+            VendingMachine vendingMachine = new VendingMachine();
+            vendingMachine.DisplayItems(vendingItems);
+            
 
-
-            SalesReport sale = new SalesReport();
-            sale.RecordMoney(5.00M, 0.00M);
         }
-
-
     }
 }

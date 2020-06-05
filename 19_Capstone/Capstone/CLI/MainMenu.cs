@@ -23,9 +23,9 @@ namespace CLI
         protected override void SetMenuOptions()
         {
             // A Sample menu.  Build the dictionary here
-            this.menuOptions.Add("1", "Add 2 integers");
-            this.menuOptions.Add("2", "Ask the user for name");
-            this.menuOptions.Add("3", "Go to a sub-menu");
+            this.menuOptions.Add("(1)", "Display Vending Machine Items");
+            this.menuOptions.Add("(2)", "Purchase");
+            this.menuOptions.Add("(3)", "Go to a sub-menu");
             this.menuOptions.Add("Q", "Quit program");
         }
 
