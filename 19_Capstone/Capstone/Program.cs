@@ -9,16 +9,12 @@ namespace Capstone
 {
     class Program
     {
-        private static Dictionary<string, FoodItems> vendingItems;
+        
 
         static void Main(string[] args)
         {
-            MainMenu menu = new MainMenu();
-
-            VendingMachine vendingMachine = new VendingMachine();
-            vendingMachine.DisplayItems(vendingItems);
-            
-
+            VendingMachine vending = new VendingMachine();
+            vending.Run();
         }
     }
 }

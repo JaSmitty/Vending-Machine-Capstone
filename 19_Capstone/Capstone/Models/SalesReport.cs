@@ -37,7 +37,7 @@ namespace Capstone.Models
             string fullPath = Path.Combine(directory, fileName);
             using (StreamWriter sw = new StreamWriter(fullPath, true))
             {
-                sw.WriteLine($"{DateTime.UtcNow} | FEED MONEY | ${currentMoney} | $0.00");
+                sw.WriteLine($"{DateTime.UtcNow} | GIVE CHANGE | ${currentMoney} | $0.00");
             }
         }
     }

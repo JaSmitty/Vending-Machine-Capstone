@@ -18,6 +18,6 @@ namespace Capstone.Models
         public string ProductName { get; private set; }
         public decimal Price { get; private set; }
         public string Type { get; private set; }
-        public int Inventory { get; private set; }
+        public int Inventory { get;  set; }
     }
 }
