@@ -41,7 +41,9 @@ namespace Capstone
         {
             while (true)
             {
+
                 Console.Clear();
+                SetColor(ConsoleColor.DarkBlue);
                 Console.WriteLine("Welcome to a Vending Machine");
                 Console.WriteLine("*********************************");
                 Console.WriteLine();
@@ -66,7 +68,10 @@ namespace Capstone
                 }
                 else
                 {
-                    Console.WriteLine("Please enter a valid command");
+                    Console.WriteLine("                              ___");
+                    Console.WriteLine("Please enter a valid command (o_0)");
+                    Console.WriteLine(@"                              /|\");
+                    Console.WriteLine(@"                             _/ \_");
                     Console.ReadLine();
                 }
             }
@@ -79,6 +84,7 @@ namespace Capstone
         {
             while (true)
             {
+                SetColor(ConsoleColor.White);
                 Console.WriteLine("Key | Product Name | Price | Inventory Left");
                 Console.WriteLine("******************************************");
                 foreach (KeyValuePair<string, FoodItems> item in vendingItems)
@@ -105,10 +111,10 @@ namespace Capstone
             while (true)
             {
                 Console.Clear();
+                SetColor(ConsoleColor.Red);
                 Console.WriteLine("Purchase Menu");
                 Console.WriteLine("****************************");
                 Console.WriteLine();
-
                 Console.WriteLine("1.)   Feed Money");
                 Console.WriteLine("2.)   Select Product");
                 Console.WriteLine("3.)   Finish Transaction");
@@ -130,9 +136,9 @@ namespace Capstone
                         }
                         else
                         {
-                            Console.WriteLine($"${money} bills dont exist!!");
+                            Console.WriteLine($"${moneyInserted} bills dont exist!!");
+                            Console.ReadLine();
                         }
-                        Console.ReadLine();
                         break;
                     }
                     
@@ -143,7 +149,7 @@ namespace Capstone
                     {
                         Console.Clear();
                         Console.WriteLine("Key | Product Name | Price | Inventory Left");
-                        Console.WriteLine("***********************************");
+                        Console.WriteLine("*********************************************");
 
                         foreach (KeyValuePair<string, FoodItems> item in vendingItems)
                         {
@@ -225,11 +231,36 @@ namespace Capstone
                 }
                 else
                 {
-                    Console.WriteLine("Please enter a valid command");
+                    Console.WriteLine("                              ___");
+                    Console.WriteLine("Please enter a valid command (o_0)");
+                    Console.WriteLine(@"                              /|\");
+                    Console.WriteLine(@"                             _/ \_");
+                    Console.ReadLine();
                 }
             }
 
 
+        }
+        #endregion
+
+        #region Color
+        static private ConsoleColor originalForegroundColor = Console.ForegroundColor;
+        static private ConsoleColor originalBackgroundColor = Console.BackgroundColor;
+        static public void SetColor(ConsoleColor foregroundColor)
+        {
+            Console.ForegroundColor = foregroundColor;
+        }
+
+        static public void SetColor(ConsoleColor foregroundColor, ConsoleColor backgroundColor)
+        {
+            Console.ForegroundColor = foregroundColor;
+            Console.BackgroundColor = backgroundColor;
+        }
+
+        static public void ResetColor()
+        {
+            Console.ForegroundColor = originalForegroundColor;
+            Console.BackgroundColor = originalBackgroundColor;
         }
         #endregion
     }
